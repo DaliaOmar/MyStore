@@ -1,0 +1,80 @@
+<div class="checkout-page">
+  <button class="back-btn" (click)="goToCart()">← Back to Cart</button>
+  <h1 class="checkout-title">Checkout</h1>
+
+  <div class="checkout-layout">
+    <div class="form-section">
+
+      <div class="form-block">
+        <h2 class="block-title">Shipping Information</h2>
+
+        <div class="form-row">
+          <div class="form-group" [class.err]="submitted && formErrors['firstName']">
+            <label for="fn">First Name</label>
+            <input id="fn" type="text" [(ngModel)]="firstName" (ngModelChange)="submitted && validate()" placeholder="Jane" />
+            <span class="err-msg" *ngIf="submitted && formErrors['firstName']">{{ formErrors['firstName'] }}</span>
+          </div>
+          <div class="form-group" [class.err]="submitted && formErrors['lastName']">
+            <label for="ln">Last Name</label>
+            <input id="ln" type="text" [(ngModel)]="lastName" (ngModelChange)="submitted && validate()" placeholder="Doe" />
+            <span class="err-msg" *ngIf="submitted && formErrors['lastName']">{{ formErrors['lastName'] }}</span>
+          </div>
+        </div>
+
+        <div class="form-group" [class.err]="submitted && formErrors['address']">
+          <label for="addr">Street Address</label>
+          <input id="addr" type="text" [(ngModel)]="address" (ngModelChange)="submitted && validate()" placeholder="123 Main Street" />
+          <span class="err-msg" *ngIf="submitted && formErrors['address']">{{ formErrors['address'] }}</span>
+        </div>
+
+        <div class="form-row three-col">
+          <div class="form-group" [class.err]="submitted && formErrors['city']">
+            <label for="city">City</label>
+            <input id="city" type="text" [(ngModel)]="city" (ngModelChange)="submitted && validate()" placeholder="New York" />
+            <span class="err-msg" *ngIf="submitted && formErrors['city']">{{ formErrors['city'] }}</span>
+          </div>
+          <div class="form-group" [class.err]="submitted && formErrors['state']">
+            <label for="state">State</label>
+            <input id="state" type="text" [(ngModel)]="state" (ngModelChange)="submitted && validate()" placeholder="NY" />
+            <span class="err-msg" *ngIf="submitted && formErrors['state']">{{ formErrors['state'] }}</span>
+          </div>
+          <div class="form-group" [class.err]="submitted && formErrors['zip']">
+            <label for="zip">ZIP</label>
+            <input id="zip" type="text" [(ngModel)]="zip" (ngModelChange)="submitted && validate()" placeholder="10001" />
+            <span class="err-msg" *ngIf="submitted && formErrors['zip']">{{ formErrors['zip'] }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-block">
+        <h2 class="block-title">Payment Details</h2>
+        <div class="form-group" [class.err]="submitted && formErrors['creditCard']">
+          <label for="cc">Card Number</label>
+          <input id="cc" type="text" [(ngModel)]="creditCard" (ngModelChange)="submitted && validate()" placeholder="1234 5678 9012 3456" maxlength="19" />
+          <span class="err-msg" *ngIf="submitted && formErrors['creditCard']">{{ formErrors['creditCard'] }}</span>
+        </div>
+        <p class="secure-note">🔒 Your payment info is encrypted and secure.</p>
+      </div>
+    </div>
+
+    <div class="order-summary">
+      <h2 class="summary-title">Your Order</h2>
+      <div class="order-items">
+        <div class="order-item" *ngFor="let item of cartItems">
+          <img [src]="item.product.url" [alt]="item.product.name" class="oi-img" />
+          <div class="oi-info">
+            <span class="oi-name">{{ item.product.name }}</span>
+            <span class="oi-qty">× {{ item.quantity }}</span>
+          </div>
+          <span class="oi-price">\${{ (item.product.price * item.quantity).toFixed(2) }}</span>
+        </div>
+      </div>
+      <div class="sum-divider"></div>
+      <div class="sum-total">
+        <span>Total</span>
+        <span class="total-val">\${{ total.toFixed(2) }}</span>
+      </div>
+      <button class="btn-order" (click)="onSubmit()">Place Order 🌙</button>
+    </div>
+  </div>
+</div>

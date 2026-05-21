@@ -1,0 +1,191 @@
+.checkout-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 5rem;
+}
+
+.back-btn {
+  background: transparent;
+  border: 1.5px solid var(--border);
+  color: var(--text-muted);
+  padding: 0.5rem 1.1rem;
+  border-radius: 30px;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+.back-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+.checkout-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-primary);
+  margin: 0 0 2rem;
+}
+
+.checkout-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) { .checkout-layout { grid-template-columns: 1fr; } }
+
+.form-section { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.form-block {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 1.6rem;
+}
+
+.block-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  margin: 0 0 1.4rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-row.three-col { grid-template-columns: 2fr 1fr 1.25fr; }
+
+@media (max-width: 600px) {
+  .form-row, .form-row.three-col { grid-template-columns: 1fr; }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.form-group:last-child { margin-bottom: 0; }
+
+.form-group label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.form-group input {
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.14);
+}
+
+.form-group.err input { border-color: #f87171; }
+
+.err-msg { font-size: 0.73rem; color: #dc2626; font-weight: 600; }
+
+.secure-note { font-size: 0.78rem; color: var(--text-muted); margin: 0.8rem 0 0; }
+
+.order-summary {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 1.5rem;
+  position: sticky;
+  top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.summary-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-primary);
+  margin: 0 0 0.3rem;
+}
+
+.order-items { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.order-item { display: flex; align-items: center; gap: 0.75rem; }
+
+.oi-img { width: 46px; height: 46px; object-fit: cover; border-radius: 10px; flex-shrink: 0; }
+
+.oi-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.oi-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.oi-qty { font-size: 0.72rem; color: var(--text-muted); }
+
+.oi-price { font-size: 0.85rem; font-weight: 700; color: var(--accent); flex-shrink: 0; }
+
+.sum-divider { height: 1.5px; background: var(--border); }
+
+.sum-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.total-val { color: var(--accent); font-size: 1.15rem; }
+
+.btn-order {
+  width: 100%;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 0.9rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn-order:hover { background: var(--accent-dark); transform: scale(1.01); }

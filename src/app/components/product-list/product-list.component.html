@@ -1,0 +1,42 @@
+<div class="list-page">
+
+  <div class="hero">
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
+    <div class="hero-content">
+      <p class="hero-tag">🌙 Sleep in style</p>
+      <h1 class="hero-title">Dreamy Pajamas<br>for Everyone</h1>
+      <p class="hero-sub">Premium loungewear for men, women & kids</p>
+    </div>
+  </div>
+
+  <div class="notif" *ngIf="notification" role="alert">
+    <span class="notif-check">✓</span> {{ notification }}
+  </div>
+
+  <div class="filter-bar">
+    <button
+      *ngFor="let cat of categories"
+      class="filter-btn"
+      [class.active]="selectedCategory === cat"
+      (click)="onCategoryChange(cat)"
+    >{{ cat }}</button>
+  </div>
+
+  <div *ngIf="isLoading" class="loading">
+    <div class="loader-ring"></div>
+    <p>Loading collection…</p>
+  </div>
+
+  <div *ngIf="!isLoading" class="grid">
+    <app-product-item
+      *ngFor="let product of filteredProducts"
+      [product]="product"
+      (addToCart)="onAddToCart($event)"
+    ></app-product-item>
+  </div>
+
+  <p *ngIf="!isLoading && filteredProducts.length === 0" class="empty">
+    No products found in this category.
+  </p>
+</div>

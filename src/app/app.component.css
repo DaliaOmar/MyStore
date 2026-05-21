@@ -1,0 +1,110 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(var(--bg-rgb), 0.94);
+  backdrop-filter: blur(16px);
+  border-bottom: 1.5px solid var(--border);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+}
+
+.brand-moon {
+  font-size: 1.7rem;
+  animation: moonFloat 4s ease-in-out infinite;
+}
+
+@keyframes moonFloat {
+  0%, 100% { transform: translateY(0) rotate(-8deg); }
+  50%       { transform: translateY(-5px) rotate(5deg); }
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.brand-tagline {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-muted);
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.nav-link:hover, .nav-link.active { color: var(--text-primary); }
+
+.cart-badge {
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 800;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  animation: badgePop 0.35s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+@keyframes badgePop {
+  from { transform: scale(0); }
+  to   { transform: scale(1); }
+}
+
+.site-main { min-height: calc(100vh - 70px - 52px); }
+
+.site-footer {
+  border-top: 1.5px solid var(--border);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background: var(--surface);
+}

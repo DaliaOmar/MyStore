@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Cloud Nine Set",
+    "price": 49.99,
+    "category": "Women",
+    "description": "Drift off in pure comfort with this 100% Egyptian cotton pajama set. Soft sky-blue with a delicate cloud print, relaxed fit top and wide-leg pants. Lightweight enough for year-round wear and cozy enough for those chilly nights.",
+    "url": "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=600&q=80",
+    "quantity": 1
+  },
+  {
+    "id": 2,
+    "name": "Little Bears Set",
+    "price": 34.99,
+    "category": "Kids",
+    "description": "Soft fleece two-piece set covered in cute bear faces on a warm pink background. Perfect for winter nights, with a kangaroo front pocket and cozy cuffs. Available in sizes 2–10 years.",
+    "url": "https://images.unsplash.com/photo-1522771930-78848d9293e8?w=600&q=80",
+    "quantity": 1
+  },
+  {
+    "id": 3,
+    "name": "Midnight Classic Set",
+    "price": 64.99,
+    "category": "Men",
+    "description": "A timeless men's pajama set in deep navy satin with fine grey pinstripes. Features a classic English collar shirt with natural shell buttons and relaxed lounge pants. Effortlessly polished for the discerning gentleman.",
+    "url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
+    "quantity": 1
+  },
+  {
+    "id": 4,
+    "name": "Starlight Set",
+    "price": 32.99,
+    "category": "Kids",
+    "description": "Lightweight cotton kids' pajamas with a colorful star print on a soft lavender background. Gentle elasticized waistband that won't dig in during sleep. Great for spring and summer nights.",
+    "url": "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=600&q=80",
+    "quantity": 1
+  },
+  {
+    "id": 5,
+    "name": "Garden Roses Set",
+    "price": 57.99,
+    "category": "Women",
+    "description": "Luxurious faux-silk two-piece with an English rose print in soft pink on a cream background. The adjustable waist tie and relaxed fit make this as elegant as it is comfortable. A timeless bedtime classic.",
+    "url": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&q=80",
+    "quantity": 1
+  },
+  {
+    "id": 6,
+    "name": "The Oxford Set",
+    "price": 69.99,
+    "category": "Men",
+    "description": "Premium striped cotton lounge set in soft grey and white. Includes a button-down shirt with a structured collar and relaxed drawstring trousers. Perfect for relaxing at home in style.",
+    "url": "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=600&q=80",
+    "quantity": 1
+  },
+  {
+    "id": 7,
+    "name": "Dino Adventure Set",
+    "price": 31.99,
+    "category": "Kids",
+    "description": "Fun cotton two-piece covered in cartoon dinosaurs on a bold green background — complete with a tiny dino tail detail on the back! Machine washable, soft, and built for wild imaginations.",
+    "url": "https://images.unsplash.com/photo-1566004100631-35d015d6a491?w=600&q=80",
+    "quantity": 1
+  },
+  {
+    "id": 8,
+    "name": "Desert Bloom Set",
+    "price": 84.99,
+    "category": "Women",
+    "description": "A luxury double-layer muslin set in warm sand with delicate gold embroidery on the chest and sleeves. An effortlessly chic design that blends heritage craft with modern comfort.",
+    "url":  "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=600&q=80",
+    "quantity": 1
+  }
+]

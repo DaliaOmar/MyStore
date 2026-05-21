@@ -1,0 +1,171 @@
+.confirm-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 5rem;
+}
+
+.success-banner {
+  text-align: center;
+  padding: 3.5rem 2rem;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--mauve) 100%);
+  border-radius: 28px;
+  margin-bottom: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.success-banner::before {
+  content: '';
+  position: absolute;
+  top: -80px; left: -80px;
+  width: 260px; height: 260px;
+  background: rgba(255,255,255,0.07);
+  border-radius: 50%;
+}
+
+.success-banner::after {
+  content: '';
+  position: absolute;
+  bottom: -50px; right: -50px;
+  width: 200px; height: 200px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 50%;
+}
+
+.success-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  display: block;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+.success-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 400;
+  font-style: italic;
+  color: #fff;
+  margin: 0 0 0.5rem;
+}
+
+.success-sub { color: rgba(255,255,255,0.88); font-size: 1rem; margin: 0 0 1.3rem; }
+
+.order-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.18);
+  border: 1.5px solid rgba(255,255,255,0.4);
+  color: #fff;
+  padding: 5px 18px;
+  border-radius: 30px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.confirm-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 700px) { .confirm-layout { grid-template-columns: 1fr; } }
+
+.confirm-block {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 1.5rem;
+}
+
+.block-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  margin: 0 0 0.25rem;
+}
+
+.block-meta { font-size: 0.75rem; color: var(--text-muted); margin: 0 0 1.2rem; }
+
+.order-items { display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 1rem; }
+
+.order-item { display: flex; align-items: center; gap: 0.75rem; }
+
+.oi-img { width: 46px; height: 46px; object-fit: cover; border-radius: 10px; flex-shrink: 0; }
+
+.oi-info {
+  flex: 1; display: flex; flex-direction: column; gap: 0.1rem; min-width: 0;
+}
+
+.oi-name {
+  font-size: 0.85rem; font-weight: 600; color: var(--text-primary);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+.oi-qty { font-size: 0.72rem; color: var(--text-muted); }
+
+.oi-price { font-size: 0.85rem; font-weight: 700; color: var(--accent); flex-shrink: 0; }
+
+.order-total-row {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1.5px solid var(--border);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.order-total-val { color: var(--accent); font-size: 1.1rem; }
+
+.ship-info { margin-bottom: 1.2rem; }
+
+.ship-name { font-weight: 700; color: var(--text-primary); margin: 0 0 0.3rem; }
+.ship-line { color: var(--text-muted); font-size: 0.88rem; margin: 0; line-height: 1.7; }
+
+.delivery-box {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: var(--tag-bg);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+}
+
+.delivery-icon { font-size: 1.4rem; }
+
+.delivery-lbl {
+  font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--text-muted); margin: 0 0 0.15rem;
+}
+
+.delivery-val { font-size: 0.9rem; font-weight: 700; color: var(--text-primary); margin: 0; }
+
+.confirm-footer { text-align: center; padding: 2rem 0; }
+
+.footer-msg { color: var(--text-muted); font-size: 0.88rem; margin: 0 0 1.5rem; }
+
+.btn-home {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 0.85rem 2.5rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn-home:hover { background: var(--accent-dark); transform: scale(1.02); }

@@ -1,0 +1,48 @@
+<div class="detail-page">
+  <button class="back-btn" (click)="goBack()">← Back to Shop</button>
+
+  <div *ngIf="isLoading" class="loading">
+    <div class="loader-ring"></div>
+  </div>
+
+  <div class="notif" *ngIf="notification" role="alert">
+    <span class="notif-check">✓</span> {{ notification }}
+  </div>
+
+  <div *ngIf="!isLoading && product" class="detail-layout">
+    <div class="detail-img-col">
+      <div class="detail-img-wrap">
+        <img [src]="product.url" [alt]="product.name" class="detail-img" />
+        <span class="detail-badge">{{ product.category }}</span>
+      </div>
+    </div>
+
+    <div class="detail-info-col">
+      <h1 class="detail-name">{{ product.name }}</h1>
+      <p class="detail-price">\${{ product.price.toFixed(2) }}</p>
+      <p class="detail-desc">{{ product.description }}</p>
+
+      <div class="detail-actions">
+        <div class="qty-wrap">
+          <label for="detail-qty" class="qty-lbl">Quantity</label>
+          <select
+            id="detail-qty"
+            [ngModel]="selectedQuantity"
+            (ngModelChange)="onQuantityChange($event)"
+            class="qty-sel"
+          >
+            <option *ngFor="let q of quantities" [value]="q">{{ q }}</option>
+          </select>
+        </div>
+        <button class="btn-add" (click)="onAddToCart()">Add to Cart</button>
+      </div>
+
+      <div class="perks">
+        <div class="perk">🌙 Sleep-certified comfort</div>
+        <div class="perk">✨ Premium fabric</div>
+        <div class="perk">🚚 Free shipping over $75</div>
+        <div class="perk">↩ 30-day returns</div>
+      </div>
+    </div>
+  </div>
+</div>

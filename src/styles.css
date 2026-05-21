@@ -1,0 +1,76 @@
+/* ================================================
+   pajama store — Premium Pajama Store
+   Soft editorial theme: warm cream, dusty rose, mauve
+   ================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Jost:wght@300;400;500;600;700&display=swap');
+
+/* ─── Design Tokens ─── */
+:root {
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Jost', system-ui, sans-serif;
+
+  /* Warm cream palette */
+  --bg:       #faf7f3;
+  --bg-rgb:   250, 247, 243;
+  --surface:  #fff9f6;
+  --border:   #ede3db;
+
+  --text-primary: #281a13;
+  --text-muted:   #9c847a;
+
+  --accent:      #b5606a;
+  --accent-dark: #944e57;
+  --accent-rgb:  181, 96, 106;
+
+  --mauve:     #9b7fa8;
+  --mauve-rgb: 155, 127, 168;
+
+  --tag-bg: #fceef0;
+}
+
+/* ─── Reset ─── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle warm radial mood lighting */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 15% 15%, rgba(var(--mauve-rgb), 0.07) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 85%, rgba(var(--accent-rgb), 0.07) 0%, transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body > * { position: relative; z-index: 1; }
+
+h1, h2, h3, h4, h5, h6 { margin: 0; line-height: 1.2; }
+p  { margin: 0; }
+a  { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+button  { cursor: pointer; font-family: var(--font-body); }
+input, select, textarea { font-family: var(--font-body); }
+select option { background: var(--surface); color: var(--text-primary); }
+
+/* Scrollbar */
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track  { background: var(--bg); }
+::-webkit-scrollbar-thumb  { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* Focus */
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }

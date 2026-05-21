@@ -1,0 +1,57 @@
+<div class="confirm-page" *ngIf="order">
+  <div class="success-banner">
+    <div class="success-icon">🌙</div>
+    <h1 class="success-title">Order Confirmed!</h1>
+    <p class="success-sub">
+      Thank you, {{ order.firstName }}! Sweet dreams are on their way.
+    </p>
+    <div class="order-badge">Order #{{ order.orderNumber }}</div>
+  </div>
+
+  <div class="confirm-layout">
+    <div class="confirm-block">
+      <h2 class="block-title">Order Details</h2>
+      <p class="block-meta">Placed on {{ order.date }}</p>
+
+      <div class="order-items">
+        <div class="order-item" *ngFor="let item of order.items">
+          <img [src]="item.product.url" [alt]="item.product.name" class="oi-img" />
+          <div class="oi-info">
+            <span class="oi-name">{{ item.product.name }}</span>
+            <span class="oi-qty">Qty: {{ item.quantity }}</span>
+          </div>
+          <span class="oi-price">\${{ (item.product.price * item.quantity).toFixed(2) }}</span>
+        </div>
+      </div>
+
+      <div class="order-total-row">
+        <span>Total Charged</span>
+        <span class="order-total-val">\${{ order.total.toFixed(2) }}</span>
+      </div>
+    </div>
+
+    <div class="confirm-block">
+      <h2 class="block-title">Shipping To</h2>
+      <div class="ship-info">
+        <p class="ship-name">{{ order.firstName }} {{ order.lastName }}</p>
+        <p class="ship-line">{{ order.address }}</p>
+        <p class="ship-line">{{ order.city }}, {{ order.state }} {{ order.zip }}</p>
+      </div>
+
+      <div class="delivery-box">
+        <span class="delivery-icon">📦</span>
+        <div>
+          <p class="delivery-lbl">Estimated Delivery</p>
+          <p class="delivery-val">3–5 Business Days</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="confirm-footer">
+    <p class="footer-msg">
+      A confirmation email has been sent. We'll notify you when your order ships!
+    </p>
+    <button class="btn-home" (click)="goHome()">Continue Shopping</button>
+  </div>
+</div>
